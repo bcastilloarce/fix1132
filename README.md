@@ -19,7 +19,7 @@ The `fix1132` script automates the resolution of a specific video conferencing i
 
 1. **Copy the Command**: Copy the following command and paste it into your terminal. This will download, navigate to the script directory, set the appropriate permissions, and execute the script:
 
-   `curl -O https://raw.githubusercontent.com/bcastilloarce/fix1132/main/fix1132.sh && cd fix1132 && chmod +x fix1132.sh && ./fix1132.sh`
+   `curl -O  https://raw.githubusercontent.com/bcastilloarce/fix1132/main/fix1132.sh && chmod +x fix1132.sh && ./fix1132.sh`
 
 2. **Run the Script**: Press Enter to execute the command.
 3. **Follow the Instructions**: Follow the on-screen instructions to complete the installation.
