@@ -1,24 +1,48 @@
 #!/bin/bash
 
-# Define color variables
+# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-# Función para pausar y esperar que el usuario presione Enter
+# Function to pause and wait for user input
 pause() {
   echo ""
-  read -rp "Press Enter to continue..."
+  read -rp "${prompt_continue}"
 }
 
-echo -e "${GREEN}Fix 1132 - Step by Step Guide${NC}"
-echo -e "${RED}Note:${NC} Please follow each step carefully."
+# Language selection
+echo "Select language / Choisissez la langue:"
+echo "1. English"
+echo "2. Français"
+read -rp "Enter 1 or 2: " lang_choice
+
+if [ "$lang_choice" = "1" ]; then
+    # English prompts
+    language="English"
+    title="Fix 1132 - Step by Step Guide"
+    note="Note: Please follow each step carefully."
+    prompt_continue="Press Enter to continue..."
+    # ... (other English prompts)
+else
+    # French prompts
+    language="Français"
+    title="Correction 1132 - Guide étape par étape"
+    note="Remarque : Veuillez suivre attentivement chaque étape."
+    prompt_continue="Appuyez sur Entrée pour continuer..."
+    # ... (other French prompts)
+    export language
+fi
+
+echo -e "${GREEN}$title${NC}"
+echo -e "${RED}$note${NC}"
 
 pause
 
 # Step 1: Force Close Zoom
-echo -e "${GREEN}Step 1: Force Close Zoom${NC}"
-echo "Hold Command (⌘) + Press Q with Zoom open."
+echo -e "${GREEN}Step 1: Force Close Zoom / Étape 1 : Forcer la fermeture de Zoom${NC}"
+echo "EN: Hold Command (⌘) + Press Q with Zoom open."
+echo "FR: Maintenez Commande (⌘) + Appuyez sur Q avec Zoom ouvert."
 pause
 
 # Step 2: Change Your Device's Mac Address
@@ -71,4 +95,5 @@ echo -e "${GREEN}Final Step: Create a Temp Email${NC}"
 echo "Once an email is associated with 1132, it will no longer be able to access Zoom without authorization."
 echo -e "${GREEN}Reopening Zoom should prompt 'update successful'.${NC}"
 
-echo -e "${GREEN}All steps completed successfully!${NC}"
+
+echo -e "${GREEN}All steps completed successfully! / Toutes les étapes ont été complétées avec succès !${NC}"
